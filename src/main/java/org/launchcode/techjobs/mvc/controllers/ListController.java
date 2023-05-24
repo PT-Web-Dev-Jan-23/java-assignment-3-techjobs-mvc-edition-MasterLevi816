@@ -16,7 +16,7 @@ import java.util.HashMap;
  * Created by LaunchCode
  */
 @Controller
-@RequestMapping(value = "list")
+@RequestMapping(value = "list") //displays list of options to click on at /list
 public class ListController {
 
     static HashMap<String, String> columnChoices = new HashMap<>();
@@ -47,7 +47,7 @@ public class ListController {
         return "list";
     }
 
-    @GetMapping(value = "jobs")
+    @GetMapping(value = "jobs") //use this for the table in list-jobs.html
     public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam(required = false) String value) {
         ArrayList<Job> jobs;
         if (column.equals("all")){
